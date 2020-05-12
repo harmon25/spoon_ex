@@ -47,6 +47,7 @@ defmodule SpoonEx.API do
   end
 
   defp do_adapter() do
-    {Application.get_env(:spoon_ex, :adapter), Application.get_env(:spoon_ex, :adapter_opts)}
+    {Application.get_env(:spoon_ex, :adapter, Tesla.Adapter.Httpc),
+     Application.get_env(:spoon_ex, :adapter_opts, [])}
   end
 end
